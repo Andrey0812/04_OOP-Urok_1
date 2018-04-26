@@ -15,9 +15,15 @@ namespace Snake
             //изменение высоты окна консоли на значение 50 (строк)
             Console.WindowHeight = 50;
 
+            //создаём объекты - линия горизонтальная и линия вертикальная
             GorizontalLine pLine = new GorizontalLine(10, 20, 10,'-');
+            VerticalLine oLine = new VerticalLine(15, 10, 20, '|');
+
+            //рисуем линии
             pLine.Draw();
-            
+            oLine.Draw();
+            pLine.Draw();
+
             //ждём нажатия Enter, что бы консоль не закрывалась сразу после исполнения программы
             Console.ReadLine();
         }
