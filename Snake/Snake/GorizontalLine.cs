@@ -7,11 +7,8 @@ using System.Threading.Tasks;
 namespace Snake
 {
     //класс для рисования линий из заданного символа
-    class GorizontalLine
+    class GorizontalLine : oLine //наследование свойств из oLine, т.е. горизонтальная линия - частный случай линии. 
     {
-        //создаём список точек
-        List<Point> pList = new List<Point>();
-
         //создаём объект "горизонтальная линия" с исходными данными 
         // х1 - начало линии x2- конец линии, y - на какой строке линия, sym - символ, из которого строим линию
         public GorizontalLine(int x1, int x2, int y, char sym)
@@ -21,17 +18,6 @@ namespace Snake
             {
                 //создаём новую точку в список
                 pList.Add(new Point(i, y, sym));
-            }
-        }
-
-        //рисуем все точки
-        public void Draw()
-        {
-            //цикл, проходящий по всем элементам листа pList
-            foreach(Point p in pList)
-            {
-                //рисуем точку (символ то есть)
-                p.Draw();
             }
         }
     }

@@ -10,19 +10,26 @@ namespace Snake
     {
         static void Main(string[] args)
         {
-            //изменение ширины окна консоли на значение 100 (столбцов)
-            Console.WindowWidth = 100;
-            //изменение высоты окна консоли на значение 50 (строк)
-            Console.WindowHeight = 50;
-
+            //Установить размер буферной области экрана
+            Console.SetBufferSize(160,50);
+            //устанавливаем размер окна
+            Console.SetWindowSize(160, 50);
+            
             //создаём объекты - линия горизонтальная и линия вертикальная
-            GorizontalLine pLine = new GorizontalLine(10, 20, 10,'-');
-            VerticalLine oLine = new VerticalLine(15, 10, 20, '|');
+            GorizontalLine g1Line = new GorizontalLine(0, 158, 0,'+');  //Верхняя горизонтальная линия
+            VerticalLine v1Line = new VerticalLine(0, 0, 49, '+');      //Левая вертикальная линия
+            GorizontalLine g2Line = new GorizontalLine(0, 158, 49, '+');//Нижняя горизонтальная линия
+            VerticalLine v2Line = new VerticalLine(158, 0, 49, '+');    //Правая вертикальная линия
 
-            //рисуем линии
-            pLine.Draw();
-            oLine.Draw();
-            pLine.Draw();
+            //рисуем созданные линии
+            g1Line.Draw();
+            v1Line.Draw();
+            g2Line.Draw();
+            v2Line.Draw();
+
+            //рисуем точку
+            Point l = new Point(55,36,'*');
+            l.Draw();
 
             //ждём нажатия Enter, что бы консоль не закрывалась сразу после исполнения программы
             Console.ReadLine();
