@@ -19,6 +19,7 @@ namespace Snake
             sym = _sym;
         }
 
+        //создание новой точки на основе уже имеющейся точки
         public Point(Point p)
         {
             x = p.x;
@@ -26,6 +27,7 @@ namespace Snake
             sym = p.sym;
         }
 
+        //определение того, какая координата будет у НОВОЙ точки в зависимости от направления относительно УЖЕ ИМЕЮЩЕЙСЯ точки
         public void Move(int offset, Direction direction)
         {
             if (direction == Direction.RIGHT) x = x + offset;

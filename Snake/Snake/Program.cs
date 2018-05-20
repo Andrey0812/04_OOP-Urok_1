@@ -28,9 +28,9 @@ namespace Snake
             v2Line.Draw();
 
             //рисуем точку
-            Point l = new Point(4,5, '*');
+            Point l = new Point(4,5, '*');  //начальная позиция змейки
             Snake snake = new Snake(l, 4, Direction.RIGHT); //создание змейки с начальной точной l длиной 4единицы вправо от начальной точки
-            snake.Draw();
+            snake.Draw();   //рисуем змейку
 
             //ждём нажатия Enter, что бы консоль не закрывалась сразу после исполнения программы
             Console.ReadLine();
