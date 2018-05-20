@@ -46,5 +46,11 @@ namespace Snake
         {
             return x + ", " + y + ", " + sym;
         }
+
+        internal void Clear()
+        {
+            sym = ' ';
+            Draw();
+        }
     }
 }
