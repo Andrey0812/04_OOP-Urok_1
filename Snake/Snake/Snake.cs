@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Snake
 {
@@ -43,6 +41,19 @@ namespace Snake
             Point nextPoint = new Point(head);  //создаём новую голову на основании старой,...
             nextPoint.Move(1, direction);       //...сдвигая её на единицу в зависимости от направления direction
             return nextPoint;                   //возвращаем новую голову
+        }
+
+        //то как двигается змейка
+        public void HandleKey (ConsoleKey key) 
+        {
+            if (key == ConsoleKey.LeftArrow)        //если нажата на клавиатуре стрелка влево, то...
+                direction = Direction.LEFT;         //...двигаемся налево
+            else if (key == ConsoleKey.RightArrow)  
+                direction = Direction.RIGHT;    
+            else if (key == ConsoleKey.UpArrow)
+                direction = Direction.UP;
+            else if (key == ConsoleKey.DownArrow)
+                direction = Direction.DOWN;
         }
     }
 }

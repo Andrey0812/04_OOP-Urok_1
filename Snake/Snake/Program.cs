@@ -30,22 +30,17 @@ namespace Snake
             Point l = new Point(40,5, '*');  //начальная позиция змейки
             Snake snake = new Snake(l, 4, Direction.DOWN); //создание змейки с начальной точной l длиной 4единицы вправо от начальной точки
             snake.Draw();   //рисуем змейку
-            snake.Move();   //двигаем змейку
-
-            //движение змейки с задержкой 300 милисекунд между шагами
-            Thread.Sleep(300);
-            snake.Move();
-            Thread.Sleep(300);
-            snake.Move();
-            Thread.Sleep(300);
-            snake.Move();
-            Thread.Sleep(300);
-            snake.Move();
-            Thread.Sleep(300);
-            snake.Move();
-
-            //ждём нажатия Enter, что бы консоль не закрывалась сразу после исполнения программы
-            Console.ReadLine();
+            
+            while(true) //бесконечный цикл
+            {
+                if (Console.KeyAvailable)   //если клавиша нажата после последнего прохождения цикла
+                {
+                    ConsoleKeyInfo key = Console.ReadKey(); //переменная key хранит нажатую клавишу
+                    snake.HandleKey(key.Key);   //обработка методом HandleKey нажатой клавиши
+                }
+                Thread.Sleep(100);      //задержка на 100 милисекунд
+                snake.Move();           //двигаем змейку
+            }
         }
     }
 }
